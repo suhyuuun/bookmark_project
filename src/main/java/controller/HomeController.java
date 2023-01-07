@@ -25,6 +25,7 @@ public class HomeController {
 
 	}
 	
+	
 	public void setService(DetailpageMapService service) {
 		this.service = service;
 	}
