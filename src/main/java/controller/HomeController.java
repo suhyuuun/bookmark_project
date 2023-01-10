@@ -28,6 +28,11 @@ public class HomeController {
 	public void setService(DetailpageMapService service) {
 		this.service = service;
 	}
+	
+	@RequestMapping("/main_menu.do")
+	public String main_menuForm() {
+		return "main_menu";
+	}
 
 	@RequestMapping("/index.do")
 	public String indexForm() {

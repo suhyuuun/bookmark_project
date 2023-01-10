@@ -103,7 +103,7 @@ div.comment-tag {
   color: #158cba;
 }
 
-.btn-group i:hover {
+i.fa-heart:hover {
   color: #ff4136;
 }
 
@@ -141,4 +141,8 @@ div.bookmark > input:checked ~ label:before {
   --bs-btn-active-bg: #fff;
   --bs-btn-active-border-color: #fff;
   border: none;
+}
+
+label.btn-bookmark {
+  padding-top : 20px;
 }

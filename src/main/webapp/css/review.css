@@ -125,9 +125,11 @@ div.comment-tag {
   color: #158cba;
 }
 
-.btn-group i:hover {
+i.fa-heart:hover {
   color: #ff4136;
 }
+
+
 .rating {
   display: flex;
   width: 115px;
@@ -193,4 +195,45 @@ div.review-images img {
   height: 100%;
   max-height: 200px;
   object-fit: cover;
+}
+
+.btn {
+  --bs-btn-color: #ff4136;
+  --bs-btn-bg: transparent;
+  --bs-btn-active-color: #ff4136;
+  --bs-btn-active-bg: #fff;
+  --bs-btn-active-border-color: #fff;
+  border: none;
+}
+
+div.bookmark > input {
+  display: none;
+}
+
+div.bookmark > label {
+  position: relative;
+  cursor: pointer;
+}
+
+div.bookmark > label::before {
+  position: absolute;
+  opacity: 0;
+}
+
+div.bookmark > label:hover:before,
+div.bookmark > label:hover ~ label:before {
+  opacity: 1 !important;
+}
+
+div.bookmark > input:checked ~ label:before {
+  opacity: 1;
+}
+
+div.bookmark > input:checked ~ label:before {
+  opacity: 0.4;
+}
+
+div.bookmark > label{
+  margin:0;
+  padding:0;
 }

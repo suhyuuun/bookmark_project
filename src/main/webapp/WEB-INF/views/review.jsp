@@ -42,17 +42,16 @@
 									id="taste" autocomplete="off" /> <label
 									class="btn btn-outline-danger" for="taste">#맛</label> <input
 									type="checkbox" class="btn-check" name="btnradio" id="price"
-									autocomplete="off" /> <label
-									class="btn btn-outline-warning" for="price">#가격</label> <input
-									type="checkbox" class="btn-check" name="btnradio" id="service"
-									autocomplete="off" /> <label
-									class="btn btn-outline-info" for="service">#서비스</label>
-								<input type="checkbox" class="btn-check" name="btnradio"
-									id="mood" autocomplete="off" /> <label
-									class="btn btn-outline-primary" for="mood">#분위기</label>
-								<input type="checkbox" class="btn-check" name="btnradio"
-									id="parking" autocomplete="off" /> <label
-									class="btn btn-outline-success" for="parking">#주차</label>
+									autocomplete="off" /> <label class="btn btn-outline-warning"
+									for="price">#가격</label> <input type="checkbox"
+									class="btn-check" name="btnradio" id="service"
+									autocomplete="off" /> <label class="btn btn-outline-info"
+									for="service">#서비스</label> <input type="checkbox"
+									class="btn-check" name="btnradio" id="mood" autocomplete="off" />
+								<label class="btn btn-outline-primary" for="mood">#분위기</label> <input
+									type="checkbox" class="btn-check" name="btnradio" id="parking"
+									autocomplete="off" /> <label class="btn btn-outline-success"
+									for="parking">#주차</label>
 							</div>
 						</div>
 					</div>
@@ -82,9 +81,8 @@
 					<div class="comment-widgets d-flex m-b-20">
 						<div class="profile column-row mt-3">
 							<div class="profile-image">
-								<span class="round"><img
-									src="/data/images/profile1.png" alt="user" width="80"
-									id="user_profile_image" /> </span>
+								<span class="round"><img src="data/images/profile1.png"
+									alt="user" width="80" id="user_profile_image" /> </span>
 							</div>
 							<div class="comment-options mt-3 d-flex justify-content-center">
 								<div class="action-icons">
@@ -115,11 +113,10 @@
 									<div class="rating flex-row-reverse">
 										<input type="radio" name="rating" value="1" id="1" /><label
 											for="1">☆</label> <input type="radio" name="rating" value="2"
-											id="2" /><label for="2">☆</label> <input
-											type="radio" name="rating" value="3" id="3" /><label
-											for="3">☆</label> <input type="radio" name="rating" value="4"
-											id="4" /><label for="4">☆</label> <input
-											type="radio" name="rating" value="5" id="5" /><label
+											id="2" /><label for="2">☆</label> <input type="radio"
+											name="rating" value="3" id="3" /><label for="3">☆</label> <input
+											type="radio" name="rating" value="4" id="4" /><label for="4">☆</label>
+										<input type="radio" name="rating" value="5" id="5" /><label
 											for="5">☆</label>
 									</div>
 								</div>
