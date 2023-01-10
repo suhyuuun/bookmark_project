@@ -31,7 +31,7 @@ String lng = request.getParameter("longitude");
 <body>
 	<div class="body-wrap container col-12 column-row">
 		<div class="row">
-			<div data-include-path="main_menu.html"
+			<div data-include-path="main_menu.do"
 				class="header container d-flex col-12 mt-4" id="main_menu"></div>
 			<script>
 				window.addEventListener("load", function() {
@@ -79,10 +79,8 @@ String lng = request.getParameter("longitude");
 												<p id="shop-rating">4.0</p>
 											</div>
 											<div class="bookmark">
-												<input type="checkbox" class="btn-check" id="btncheck1"
-													autocomplete="off" /> <label class="btn btn-bookmark"
-													for="btncheck1"><i class="fa-solid fa-heart fa-2x"></i>
-												</label>
+												<input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" /> <label class="btn btn-bookmark" for="btncheck1">
+												<i class="fa-solid fa-heart fa-2x"></i></label>
 											</div>
 										</div>
 									</div>
@@ -138,7 +136,7 @@ String lng = request.getParameter("longitude");
 			</div>
 		</div>
 		<div class="row m-0">
-			<div data-include-path="review.html"
+			<div data-include-path="review.do"
 				class="container d-flex col-12 mt-4" id="review"></div>
 			<script>
 				window.addEventListener("load", function() {
@@ -169,8 +167,8 @@ String lng = request.getParameter("longitude");
 		<%=lng%>
 			;
 		</script>
-		<script defer src="js/main.js"></script>
-		<script defer src="js/detail_page.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/detail_page.js"></script>
 	</div>
 </body>
 </html>
