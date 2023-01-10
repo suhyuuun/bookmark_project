@@ -27,6 +27,11 @@ String lng = request.getParameter("longitude");
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=952441bca7c2877c20d98599bb8b06bd&amp;libraries=LIBRARY"></script>
 <script charset="UTF-8"
 	src="https://t1.daumcdn.net/mapjsapi/js/main/4.4.8/kakao.js"></script>
+<script>
+$(document).ready(function(){
+	$('#bookmark').attr("action","").submit();
+});
+</script>
 </head>
 <body>
 	<div class="body-wrap container col-12 column-row">
@@ -79,8 +84,12 @@ String lng = request.getParameter("longitude");
 												<p id="shop-rating">4.0</p>
 											</div>
 											<div class="bookmark">
-												<input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" /> <label class="btn btn-bookmark" for="btncheck1">
-												<i class="fa-solid fa-heart fa-2x"></i></label>
+												<form name="bookmark" method=GET>
+													<input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" /> 
+													<label class="btn btn-bookmark" for="btncheck1">
+													<i class="fa-solid fa-heart fa-2x"></i></label>
+													
+												</form>
 											</div>
 										</div>
 									</div>
