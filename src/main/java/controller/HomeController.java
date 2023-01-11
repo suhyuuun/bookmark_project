@@ -20,15 +20,16 @@ public class HomeController {
 	private DetailpageMapService service;
 	private DetailpagePageDTO pdto;
 	private int currentPage;
-	
+	private int unique_num;
+
 	public HomeController() {
 
 	}
-	
+
 	public void setService(DetailpageMapService service) {
 		this.service = service;
 	}
-	
+
 	@RequestMapping("/main_menu.do")
 	public String main_menuForm() {
 		return "main_menu";
@@ -59,7 +60,7 @@ public class HomeController {
 		return "magazine_page";
 	}
 
-	//검색했을 때 페이지
+	// 검색했을 때 페이지
 	@RequestMapping("/search_page_map.do")
 	public String search_page_mapForm() {
 		return "search_page_map";
@@ -69,12 +70,12 @@ public class HomeController {
 	public String loginForm() {
 		return "login";
 	}
-	
+
 	@RequestMapping("/sign_up.do")
 	public String sign_upForm() {
 		return "sign_up";
 	}
-	
+
 	@RequestMapping("/my_page.do")
 	public String my_pageForm() {
 		return "my_page";
@@ -85,7 +86,7 @@ public class HomeController {
 		return "review";
 	}
 
-	//임시 맛집리스트 페이지(추후 수정예정)
+	// 임시 맛집리스트 페이지(추후 수정예정)
 	@RequestMapping(value = "/list.do", method = RequestMethod.GET)
 	public ModelAndView listMethod(DetailpagePageDTO pv, ModelAndView mav) {
 		int totalRecord = service.countProcess();
@@ -103,11 +104,19 @@ public class HomeController {
 		return mav;
 	}// listMethod()
 
-	//상세페이지 (지도까지만 구현)
-	@RequestMapping(value = "/detailpage.do")
-	public ModelAndView detailpagemapMethod(String latitude, String longitude, ModelAndView mav) {
+	// 상세페이지 (지도까지만 구현)
+//	@RequestMapping(value = "/detailpage.do")
+//	public ModelAndView detailpagemapMethod(String latitude, String longitude, ModelAndView mav) {
+//		mav.setViewName("detailpage");
+//		return mav;
+//	}// detailpagemapMethod()
+
+	@RequestMapping(value = "/detailpage.do", method = RequestMethod.GET)
+	public ModelAndView detailpagemapMethod(String address, ModelAndView mav) {
+		mav.addObject("dto", service.f_address(address));
+		mav.addObject("unique_num", unique_num);
 		mav.setViewName("detailpage");
 		return mav;
-	}// detailpagemapMethod()
+	}
 
 }

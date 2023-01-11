@@ -32,6 +32,11 @@ public class DetailpageDaoImp implements DetailpageDao {
 	}
 
 	@Override
+	public List<DetailpageMapDTO> res_address(HashMap<String, Object> address) {
+		return sqlSession.selectList("res_test.res_address", address);
+	}
+	
+	@Override
 	public int count() {
 		return sqlSession.selectOne("res_test.count");
 	}

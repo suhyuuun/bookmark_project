@@ -14,6 +14,12 @@
 		FROM res_test
 	</select>
 
+	<select id="res_address" parameterType="java.util.HashMap"
+		resultType="dto.DetailpageMapDTO">
+		SELECT address
+		FROM res_test
+	</select>
+
 	<select id="list" parameterType="dto.DetailpagePageDTO"
 		resultType="dto.DetailpageMapDTO">
 		select *
