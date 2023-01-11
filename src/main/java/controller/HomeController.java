@@ -103,6 +103,7 @@ public class HomeController {
 			mav.addObject("aList", aList);
 			mav.addObject("pv", this.pdto);
 		}
+		//hashmap이용해서 모든 값 넘기기
 		mav.setViewName("list");
 		return mav;
 	}// listMethod()
