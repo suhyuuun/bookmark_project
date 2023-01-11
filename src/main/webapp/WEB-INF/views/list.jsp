@@ -15,10 +15,12 @@
 		</tr>
 		<c:forEach items="${aList}" var="dto">
 			<tr>
-				<td><c:url var="path" value="detailpage.do">
+				<td>
+					<c:url var="path" value="detailpage.do">
 						<c:param name="unique_num" value="${dto.unique_num}" />
 						<c:param name="address" value="${dto.address}" />
-					</c:url> <a href="${path}">${dto.foodstore_id}</a></td>
+					</c:url> <a href="${path}">${dto.foodstore_id}</a>
+				</td>
 			</tr>
 		</c:forEach>
 	</table>

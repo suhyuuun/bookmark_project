@@ -1,3 +1,5 @@
+var res_address = '${address}';
+
 var mapContainer = document.getElementById("map"), // 지도를 표시할 div
   mapOption = {
     center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
@@ -10,9 +12,9 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
 // 주소-좌표 변환 객체를 생성합니다
 var geocoder = new kakao.maps.services.Geocoder();
 
-function detailpage_address(address) {
+function detailpage_address(res_address) {
   // 주소로 좌표를 검색합니다
-  geocoder.addressSearch(address, function (result, status) {
+  geocoder.addressSearch(res_address, function (result, status) {
     // 정상적으로 검색이 완료됐으면
     if (status === kakao.maps.services.Status.OK) {
       var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
@@ -27,6 +29,6 @@ function detailpage_address(address) {
       map.setCenter(coords);
     }
   });
-}
+};
 
-detailpage_address(address);
+detailpage_address(res_address);

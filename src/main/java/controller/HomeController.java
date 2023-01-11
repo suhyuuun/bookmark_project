@@ -2,6 +2,8 @@ package controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,6 +23,7 @@ public class HomeController {
 	private DetailpagePageDTO pdto;
 	private int currentPage;
 	private int unique_num;
+	private String address;
 
 	public HomeController() {
 
@@ -112,9 +115,8 @@ public class HomeController {
 //	}// detailpagemapMethod()
 
 	@RequestMapping(value = "/detailpage.do", method = RequestMethod.GET)
-	public ModelAndView detailpagemapMethod(String address, ModelAndView mav) {
-		mav.addObject("dto", service.f_address(address));
-		mav.addObject("unique_num", unique_num);
+	public ModelAndView detailpagemapMethod(String address, ModelAndView mav, HttpServletRequest httpServletRequest) {
+		//http에서 유니크넘값 가져오기 -> list에서 유니크넘값관련 변수 모두 addobject로 저장 -> setviewName에 저장 
 		mav.setViewName("detailpage");
 		return mav;
 	}

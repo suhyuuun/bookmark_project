@@ -20,6 +20,12 @@
 		FROM res_test
 	</select>
 
+	<select id="res_unique_num" parameterType="java.util.HashMap"
+		resultType="dto.DetailpageMapDTO">
+		SELECT unique_num
+		FROM res_test
+	</select>
+
 	<select id="list" parameterType="dto.DetailpagePageDTO"
 		resultType="dto.DetailpageMapDTO">
 		select *

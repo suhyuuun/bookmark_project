@@ -36,10 +36,5 @@ public class DetailpageMapServiceImp implements DetailpageMapService {
 		return dao.count();
 	}
 
-	@Override
-	public List<DetailpageMapDTO> f_address(String address) {
-		HashMap<String, Object> f_address = new HashMap<String, Object>();
-		f_address.put("address",address);
-		return dao.res_address(f_address);
-	}
+
 }
