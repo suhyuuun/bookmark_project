@@ -115,11 +115,11 @@ public class HomeController {
 //		return mav;
 //	}// detailpagemapMethod()
 
-	@RequestMapping(value = "/detailpage.do", method = RequestMethod.GET)
-	public ModelAndView detailpagemapMethod(String address, ModelAndView mav, HttpServletRequest httpServletRequest) {
-		//http에서 유니크넘값 가져오기 -> list에서 유니크넘값관련 변수 모두 addobject로 저장 -> setviewName에 저장 
-		mav.setViewName("detailpage");
-		return mav;
-	}
+//	@RequestMapping(value = "/detailpage.do", method = RequestMethod.GET)
+//	public ModelAndView detailpagemapMethod(String address, Model model, HttpServletRequest httpServletRequest) {
+//		//http에서 유니크넘값 가져오기 -> list에서 유니크넘값관련 변수 모두 addobject로 저장 -> setviewName에 저장 
+//		
+//		return mav;
+//	}
 
 }
