@@ -18,23 +18,37 @@ public class DetailpageMapServiceImp implements DetailpageMapService {
 		this.dao = dao;
 	}
 	
+
 	@Override
-	public List<DetailpageMapDTO> f_coordindate(String latitude, String longitude) {
-		HashMap<String, Object> coordinate = new HashMap<String, Object>();
-		coordinate.put("latitude", latitude);
-		coordinate.put("longitude", longitude);
-		return dao.res_coordindate(coordinate);
+	public List<DetailpageMapDTO> f_listProcess(DetailpagePageDTO pv) {
+		return dao.list(pv);
 	}
 
 	@Override
-	public List<DetailpageMapDTO> listProcess(DetailpagePageDTO pv) {
-		return dao.list(pv);
+	public List<DetailpageMapDTO> f_coordindate(String latitude, String longitude) {
+		HashMap<String, Object> coor = new HashMap<String, Object>();
+		coor.put("latitude",latitude);
+		coor.put("longitude", longitude);
+		return dao.coordindate(coor);
+	}
+
+	@Override
+	public List<DetailpageMapDTO> f_address(String address) {
+		HashMap<String, Object> addr = new HashMap<String, Object>();
+		addr.put("address",address);
+		return dao.address(addr);
 	}
 
 	@Override
 	public int countProcess() {
 		return dao.count();
 	}
+
+	@Override
+	public List<DetailpageMapDTO> listProcess(DetailpagePageDTO pdto) {
+		return dao.list(pdto);
+	}
+
 
 
 }

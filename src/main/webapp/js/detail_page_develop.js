@@ -1,4 +1,4 @@
-var res_address = '${address}';
+
 
 var mapContainer = document.getElementById("map"), // 지도를 표시할 div
   mapOption = {
@@ -13,6 +13,17 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
 var geocoder = new kakao.maps.services.Geocoder();
 
 function detailpage_address(res_address) {
+	$.ajax({
+	type : 'POST',
+	dataType : 'json',
+		url : 'detailpagemap_param.do',
+		sucess: function(result){
+		var res_address = result.addressList;
+		},
+		error : function(error){
+			alert(error);
+			}
+	});
   // 주소로 좌표를 검색합니다
   geocoder.addressSearch(res_address, function (result, status) {
     // 정상적으로 검색이 완료됐으면

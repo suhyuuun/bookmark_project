@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import dto.DetailpageMapDTO;
@@ -22,8 +23,6 @@ public class HomeController {
 	private DetailpageMapService service;
 	private DetailpagePageDTO pdto;
 	private int currentPage;
-	private int unique_num;
-	private String address;
 
 	public HomeController() {
 
@@ -90,7 +89,7 @@ public class HomeController {
 	}
 
 	// 임시 맛집리스트 페이지(추후 수정예정)
-	@RequestMapping(value = "/list.do", method = RequestMethod.GET)
+	@RequestMapping(value = "/list.do")
 	public ModelAndView listMethod(DetailpagePageDTO pv, ModelAndView mav) {
 		int totalRecord = service.countProcess();
 		if (totalRecord >= 1) {
@@ -103,8 +102,6 @@ public class HomeController {
 			mav.addObject("aList", aList);
 			mav.addObject("pv", this.pdto);
 		}
-		//hashmap이용해서 모든 값 넘기기
-		mav.setViewName("list");
 		return mav;
 	}// listMethod()
 
@@ -120,6 +117,21 @@ public class HomeController {
 //		//http에서 유니크넘값 가져오기 -> list에서 유니크넘값관련 변수 모두 addobject로 저장 -> setviewName에 저장 
 //		
 //		return mav;
-//	}
+//	}{
+	
+	
+	@RequestMapping("/detailpagemap.do")
+	public String detailpagemapForm() {
+		return "detailpagemap";
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/detailpagemap_param.do", method=RequestMethod.POST)
+	public ModelAndView detailpageMethod(String address,ModelAndView mav) {
+		List<DetailpageMapDTO> addressList = service.f_address(address);
+		mav.addObject("addressList", addressList);
+		mav.setViewName("jsonView");
+		return mav;
+	}
 
 }
