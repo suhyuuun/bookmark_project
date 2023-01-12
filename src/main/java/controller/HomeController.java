@@ -106,32 +106,24 @@ public class HomeController {
 	}// listMethod()
 
 	// 상세페이지 (지도까지만 구현)
-//	@RequestMapping(value = "/detailpage.do")
-//	public ModelAndView detailpagemapMethod(String latitude, String longitude, ModelAndView mav) {
-//		mav.setViewName("detailpage");
-//		return mav;
-//	}// detailpagemapMethod()
-
-//	@RequestMapping(value = "/detailpage.do", method = RequestMethod.GET)
-//	public ModelAndView detailpagemapMethod(String address, Model model, HttpServletRequest httpServletRequest) {
-//		//http에서 유니크넘값 가져오기 -> list에서 유니크넘값관련 변수 모두 addobject로 저장 -> setviewName에 저장 
-//		
-//		return mav;
-//	}{
-	
-	
-	@RequestMapping("/detailpagemap.do")
-	public String detailpagemapForm() {
-		return "detailpagemap";
-	}
-	
-	@ResponseBody
-	@RequestMapping(value = "/detailpagemap_param.do", method=RequestMethod.POST)
-	public ModelAndView detailpageMethod(String address,ModelAndView mav) {
-		List<DetailpageMapDTO> addressList = service.f_address(address);
-		mav.addObject("addressList", addressList);
-		mav.setViewName("jsonView");
+	@RequestMapping(value = "/detailpage.do")
+	public ModelAndView detailpagemapMethod(String latitude, String longitude, ModelAndView mav) {
+		mav.setViewName("detailpage");
 		return mav;
-	}
+	}// detailpagemapMethod()
+	
+//	@RequestMapping("/detailpagemap.do")
+//	public String detailpagemapForm() {
+//		return "detailpagemap";
+//	}
+//	
+//	@ResponseBody
+//	@RequestMapping(value = "/detailpagemap_param.do", method=RequestMethod.POST)
+//	public ModelAndView detailpageMethod(String address,ModelAndView mav) {
+//		List<DetailpageMapDTO> addressList = service.f_address(address);
+//		mav.addObject("addressList", addressList);
+//		mav.setViewName("jsonView");
+//		return mav;
+//	}
 
 }
